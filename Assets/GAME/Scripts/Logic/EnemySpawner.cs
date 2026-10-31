@@ -5,14 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(EnemySpawnerInput))]
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemyPrefab;
-    [SerializeField] private Transform _target;
+    [SerializeField] private Mover _enemyMover;
+    [SerializeField] private Vector3 _moveDirection;
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private float _spawnDelay;
 
     private bool _isActive;
     private Coroutine _coroutine;
-    EnemySpawnerInput _spawnerInput;
+    private EnemySpawnerInput _spawnerInput;
 
     private void Awake()
     {
@@ -53,12 +53,9 @@ public class EnemySpawner : MonoBehaviour
 
             int randomIndex = Random.Range(0, _spawnPoints.Count);
 
-            GameObject enemy = Instantiate(_enemyPrefab, _spawnPoints[randomIndex]);
+            Mover enemyMover = Instantiate(_enemyMover, _spawnPoints[randomIndex]);
 
-            if (enemy.TryGetComponent<MoveToTarget>(out MoveToTarget moveBehaviour))
-            {
-                moveBehaviour.SetTarget(_target);
-            }
+            enemyMover.Init(_moveDirection);
         }
     }
 }

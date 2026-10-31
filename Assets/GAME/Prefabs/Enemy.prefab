@@ -247,8 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee0185722f93d844a7f75b602d0e83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveToTarget
-  _target: {fileID: 0}
-  _speed: 1
+  _speed: 5
 --- !u!1 &3307735047176429034
 GameObject:
   m_ObjectHideFlags: 0
