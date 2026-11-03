@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MoveToTarget : MonoBehaviour
+public class MoverToTarget : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
