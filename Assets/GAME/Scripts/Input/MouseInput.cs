@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EnemySpawnerInput : MonoBehaviour
+public class MouseInput : MonoBehaviour
 {
     public event Action MouseClicked;
 

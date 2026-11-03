@@ -4,7 +4,7 @@ public class KillZone : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<Mover>(out _))
+        if (other.TryGetComponent<MoveToTarget>(out _))
         {
             Destroy(other.gameObject);
         }
